@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "description": "Implement a Markdown parser using three different programming paradigms: **object-oriented**, **functional**, and **imperative**.",
   "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
     "chai": "~1.8.0",
     "mocha": "2.0.1"
   },
@@ -11,7 +12,8 @@
     "test": "mocha ./spec/*.js",
     "parse:oo": "bin/parse --paradigm oo",
     "parse:functional": "bin/parse --paradigm functional",
-    "parse:imperative": "bin/parse --paradigm imperative"
+    "parse:imperative": "bin/parse --paradigm imperative",
+    "blarg": "babel-node lib-object-oriented/index.js"
   },
   "dependencies": {
     "minimist": "^1.2.0"
