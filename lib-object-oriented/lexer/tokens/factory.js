@@ -1,7 +1,6 @@
 import Token from './token'
 import String from './string'
-import Italics from './italics'
-import Bold from './bold'
+import BoldOrItalics from './bold_or_italics'
 import NewLine from './new_line'
 import ListItem from './list_item'
 
@@ -11,8 +10,9 @@ export default class TokenFactory {
       case 'Character':
       case 'Space':
         return new String( identifier ); break;
-      case 'Underscore': return new Italics( identifier ); break;
-      case 'Asterisk': return new Bold( identifier ); break;
+      case 'Underscore':
+      case 'Asterisk':
+        return new BoldOrItalics( identifier ); break;
       case 'NewLine': return new NewLine( identifier ); break;
       case 'Hyphen': return new ListItem( identifier ); break;
       default:
@@ -21,14 +21,7 @@ export default class TokenFactory {
   }
 }
 
-// Paragraphs
-// ?
-// Headings
-// #, ##, ###, ####, #####, ######
-// Italicized text
-// *, _
-// Bold text
-// **, __
+
 // Links
 // [STRING](STRING)
 // Images

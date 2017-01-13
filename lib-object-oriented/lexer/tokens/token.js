@@ -1,5 +1,6 @@
 export default class Token {
   constructor( input={} ) {
+    this.input = input
     this.value = input.value || ''
   }
 
